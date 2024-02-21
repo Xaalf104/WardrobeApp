@@ -1,7 +1,8 @@
 import react from "react";
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, FlatList} from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import Card from "./components/card";
+import Header from "./components/header";
 
 export default function Home(){
     return(
@@ -10,7 +11,7 @@ export default function Home(){
         <View style={styles.background}> 
             {/* header */}
             <View style={styles.header}>
-                <Text style={{textAlign: 'center'}}>Header</Text>
+                <Header/>
             </View>
             <View style={styles.body}>
                 <Card/>
@@ -34,15 +35,13 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     body:{
-        flex: 6,
-        backgroundColor: 'orange',
+        flex: 4,
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'center'
     },
     header:{
         flex: 1.5,
-        backgroundColor:'red'
     },
     cards:{
         width: '50%',

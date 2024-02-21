@@ -7,8 +7,8 @@ export default function Card(){
         <View style={styles.cardBG}>
             <View style={styles.imageContainer}>
                 <Image style={styles.image} source={require('../../../assets/images/samples/Sample2.jpg')}></Image>
-                <Text>Sweater</Text>
-                <Text style={styles.desc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut imperdiet felis. Donec in blandit neque. Etiam dignissim pulvinar faucibus. Quisque eget erat nec magna aliquam viverra. Integer at est a orci condimentum porttitor. </Text>
+                <Text numberOfLines={1} ellipsizeMode='tail'>Sweater</Text>
+                <Text style={styles.desc} numberOfLines={3} ellipsizeMode='tail'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut imperdiet felis. Donec in blandit neque. Etiam dignissim pulvinar faucibus. Quisque eget erat nec magna aliquam viverra. Integer at est a orci condimentum porttitor. </Text>
             </View>
         </View>
     )
@@ -20,25 +20,24 @@ const styles = StyleSheet.create({
         height: hp(30),
         backgroundColor: 'white',
         borderRadius: 20,
-        margin: 7, 
+        margin: 7,
     },
-    imageContainer:{
+    imageContainer: {
         width: wp(40),
         height: hp(18),
-        backgroundColor: 'gray',
         margin: 10,
         borderRadius: 10
     },
-    image:{
+    image: {
         width: '100%',
         height: '100%',
-        borderRadius: 7,
+        borderRadius: 15,
         borderColor: 'gray',
         borderWidth: 1
     },
     desc:{
-        flex: 1,
-        height: '100%',
-        width: '100%'
+        fontSize: 14,
+        textAlign: 'left',
+        marginTop: 5
     }
 })
