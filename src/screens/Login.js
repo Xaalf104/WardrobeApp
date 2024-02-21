@@ -5,12 +5,14 @@ import GoogleLogo from '../../assets/images/Google_Icons.png';
 import CustomInput from './components/input';
 import CustomButton from './components/button';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const {height, weight} = Dimensions.get('window')
 const Login = () => {
     const {height} = useWindowDimensions();
     return(
         <>
+        <LinearGradient style={styles.container} colors={['#333333', 'black']} locations={[0.1,0.8]}>
         <SafeAreaView style={styles.root}>
             <Image source={Logo} style={styles.logostyle} resizeMode='contain'/>
             <View style={styles.form}>
@@ -26,6 +28,7 @@ const Login = () => {
                 <Text style={styles.orText}>Don't have an account?</Text>
             </View>
         </SafeAreaView>
+        </LinearGradient>
         </>
     );
 };
@@ -40,7 +43,8 @@ const styles = StyleSheet.create({
         maxHeight: 200,
         maxWidth: 300,
         alignSelf: 'center',
-        margin: 30
+        margin: 20,
+        flex: 0.3
     },
     headerText: {
         fontSize: 35,
@@ -62,7 +66,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
 
         padding: 2,
-        marginVertical: 10,
+        marginVertical: 15,
 
         alignItems: 'center',
         borderRadius: 5,
@@ -76,8 +80,13 @@ const styles = StyleSheet.create({
     form:{
         alignItems: 'center',
         margin: 50,
-        width: wp(85)
-    }
+        flex: 0.7
+    },
+    container: {  
+        flex: 1,
+        backgroundColor: '#fff',
+    
+      },
     
 });
 

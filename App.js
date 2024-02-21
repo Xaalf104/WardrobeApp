@@ -4,14 +4,13 @@ import { LinearGradient } from 'expo-linear-gradient';
 import Login from './src/screens/Login'
 import Footer from './src/screens/components/footer'
 import WelcomeScreen from './src/screens/Welcome';
+import Home from './src/screens/Home';
 
 export default function App() {
   return (
     <>
-    <LinearGradient style={styles.container} colors={['#333333', 'black']} locations={[0.1,0.8]}>
-      <Login/>
+      <Home/>
       <StatusBar style="light"/>
-    </LinearGradient>
     </>
   )
 }
