@@ -1,4 +1,4 @@
-import {View, Text, SafeAreaView, StyleSheet, Image} from 'react-native'
+import {View, Text, SafeAreaView, StyleSheet, Image, TextInput} from 'react-native'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
 
 export default function header(){
@@ -12,7 +12,7 @@ export default function header(){
 
                         </Image>
                     </View>
-                    <Text style={styles.searchtext}>Search...</Text>
+                    <TextInput style={styles.searchtext} placeholder='Search...'></TextInput>
                 </View>
             </View>
             <View style={styles.navbarContainer}>
@@ -31,7 +31,7 @@ const styles = StyleSheet.create ({
     mainContainer:{
         backgroundColor: 'black', 
         flex: 1,
-        flexBasis: 1
+        flexBasis: 1,
     },
     bg:{
         backgroundColor: '#B40B0B',
@@ -42,10 +42,10 @@ const styles = StyleSheet.create ({
         position: 'absolute',
         bottom: 110,
         width: wp(100),
-        height: hp(15)
+        height: hp(15),
     },
     searchBarcontainer: {
-        marginTop: 60,
+        marginTop: 55,
         backgroundColor: '#F5f5f5',
         width: wp(90),
         height: hp(5),
@@ -54,12 +54,13 @@ const styles = StyleSheet.create ({
         borderWidth: 1.5,
         borderRadius: 30,
         elevation: 8,
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     searchtext:{
         textAlign:'left',
         margin: 9,
-        marginLeft: 7
+        marginLeft: 7,
+        flex:1
     },
     profileIconContainer:{
         backgroundColor: 'darkgray',
@@ -87,7 +88,8 @@ const styles = StyleSheet.create ({
         display: 'flex',
         flexDirection: 'row',
         alignContent: 'center',
-        rowGap: 50
+        rowGap: 50,
+        justifyContent: 'space-around',
     },
     line:{
         backgroundColor: 'white',
@@ -98,9 +100,8 @@ const styles = StyleSheet.create ({
     },
     choices:{
         textAlign: 'center',
-        margin: 5,
-        paddingLeft: 11,
-        marginLeft: 30,
-        fontWeight: 'bold'
+        flex: 0.25,
+        marginTop: 4,
+        fontWeight: 'bold',
     }
 })

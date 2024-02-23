@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, FlatList} from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import Card from "./components/card";
 import Header from "./components/header";
+import Navbar from './components/navbar';
 
 export default function Home(){
     return(
@@ -23,6 +24,9 @@ export default function Home(){
                 <Card/>
                 <Card/>
             </View>
+            <View style={styles.navbar}>
+                <Navbar/>
+            </View>
         </View>
         </>
     )
@@ -41,10 +45,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     header:{
-        flex: 1.5,
+        flex: 1.7,
     },
     cards:{
         width: '50%',
+    },
+    navbar:{
+        flex: 0.3,
+        flexDirection:'row'
     }
-
 }) 
